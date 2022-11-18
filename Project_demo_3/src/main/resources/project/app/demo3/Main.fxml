@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.app.demo3.MainController">
+   <children>
+      <MenuBar prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#loadFile" text="Load" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutProgram" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Add Player">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Pane layoutX="14.0" layoutY="33.0" prefHeight="48.0" prefWidth="310.0">
+                     <children>
+                        <TextField fx:id="playerTeam" layoutX="14.0" layoutY="13.0" prefHeight="25.0" prefWidth="50.0" promptText="Team" />
+                        <TextField fx:id="playerNickname" layoutX="127.0" layoutY="13.0" prefHeight="25.0" prefWidth="72.0" promptText="Nickname" />
+                        <TextField fx:id="playerRole" layoutX="205.0" layoutY="13.0" prefHeight="25.0" prefWidth="42.0" promptText="Role" />
+                        <TextField fx:id="playerAge" layoutX="254.0" layoutY="13.0" prefHeight="25.0" prefWidth="42.0" promptText="Age" />
+                        <TextField fx:id="playerName" layoutX="70.0" layoutY="13.0" prefHeight="25.0" prefWidth="50.0" promptText="Name" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="324.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#addPlayer" text="add player" />
+                  <Label layoutX="14.0" layoutY="93.0" text="Add Stats">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Pane layoutX="29.0" layoutY="138.0" prefHeight="34.0" prefWidth="402.0">
+                     <children>
+                        <Label layoutX="82.0" layoutY="15.0" />
+                        <TextField fx:id="killsField" layoutX="14.0" layoutY="12.0" prefHeight="26.0" prefWidth="42.0" promptText="Kills" />
+                        <TextField fx:id="deathsField" layoutX="69.0" layoutY="12.0" prefHeight="26.0" prefWidth="58.0" promptText="Deaths" />
+                        <TextField fx:id="defusesField" layoutX="144.0" layoutY="12.0" prefHeight="26.0" prefWidth="58.0" promptText="Defuses" />
+                        <TextField fx:id="plantsField" layoutX="216.0" layoutY="12.0" prefHeight="26.0" prefWidth="58.0" promptText="Plants" />
+                        <TextField fx:id="spentField" layoutX="293.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" promptText="Amount Spent" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="37.0" layoutY="165.0" prefHeight="41.0" prefWidth="386.0">
+                     <children>
+                        <RadioButton fx:id="killsBtn" layoutX="21.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#killsClicked" />
+                        <RadioButton fx:id="spentBtn" layoutX="325.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#spentClicked" />
+                        <RadioButton fx:id="plantsBtn" layoutX="229.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#plantsClicked" />
+                        <RadioButton fx:id="defusesBtn" layoutX="158.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#defusesClicked" />
+                        <RadioButton fx:id="deathsBtn" layoutX="84.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#deathsClicked" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="169.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#addStats" text="add stats" />
+                  <Label layoutX="14.0" layoutY="254.0" text="Output Options">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="statsNickname" layoutX="43.0" layoutY="117.0" prefHeight="26.0" prefWidth="162.0" promptText="Enter the player's nickname" />
+                  <Label fx:id="optionsLabel" alignment="TOP_LEFT" layoutX="20.0" layoutY="281.0" prefHeight="176.0" prefWidth="240.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="optionsInputOne" layoutX="29.0" layoutY="468.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="optionsInputTwo" layoutX="201.0" layoutY="468.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="userInput" layoutX="29.0" layoutY="511.0" promptText="Enter your choice" />
+                  <Button layoutX="251.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#display" text="Display" />
+               </children></AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="20.0" layoutY="14.0" text="Output">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Accordion layoutX="103.0" layoutY="407.0" />
+                  <TextArea fx:id="outputArea" layoutX="20.0" layoutY="41.0" prefHeight="506.0" prefWidth="374.0" />
+               </children></AnchorPane>
+         </items>
+      </SplitPane>
+      <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" text="Left status" textFill="#9f9f9f" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label fx:id="rightStatus" text="Right status" textFill="#9f9f9f">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
