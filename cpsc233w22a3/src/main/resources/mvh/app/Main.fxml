@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvh.app.MainController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="loadItem" mnemonicParsing="false" onAction="#loadFile" text="Load" />
+                        <MenuItem fx:id="saveItem" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                        <MenuItem fx:id="quitItem" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="infoItem" mnemonicParsing="false" onAction="#displayProgramInfo" text="About MvHMapEditor" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.25066785396260016, 0.7337488869100623" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane>
+                    <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="World" textAlignment="CENTER" wrapText="false">
+                            <font>
+                                <Font size="18.0" fx:id="x1" />
+                            </font>
+                            <textFill>
+                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+                            </textFill>
+                        </Label>
+                  <Label layoutX="26.0" layoutY="45.0" text="Rows" />
+                  <Label layoutX="17.0" layoutY="71.0" text="Columns" />
+                  <TextField fx:id="worldRows" layoutX="69.0" layoutY="41.0" />
+                  <TextField fx:id="worldCols" layoutX="70.0" layoutY="67.0" />
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="138.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Monster" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x11" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x21" />
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="285.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Hero" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x12" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
+                     </textFill>
+                  </Label>
+                  <Button fx:id="createWorldBtn" layoutX="88.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#createWorld" text="Create New World" />
+                  <RadioButton fx:id="monButton" layoutX="102.0" layoutY="143.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="heroButton" layoutX="102.0" layoutY="290.0" mnemonicParsing="false" />
+                  <Label layoutX="16.0" layoutY="182.0" text="Symbol" />
+                  <Label layoutX="18.0" layoutY="215.0" text="Health" />
+                  <TextField fx:id="monSymField" layoutX="65.0" layoutY="178.0" />
+                  <TextField fx:id="monHealthField" layoutX="65.0" layoutY="211.0" />
+                  <TextField fx:id="heroSymField" layoutX="63.0" layoutY="312.0" />
+                  <TextField fx:id="heroHealthField" layoutX="64.0" layoutY="342.0" />
+                  <Label layoutX="13.0" layoutY="316.0" text="Symbol" />
+                  <Label layoutX="15.0" layoutY="346.0" text="Health" />
+                  <Label layoutX="14.0" layoutY="377.0" text="Weapon" />
+                  <Label layoutX="16.0" layoutY="409.0" text="Armor" />
+                  <TextField fx:id="heroWeaponField" layoutX="64.0" layoutY="373.0" />
+                  <TextField fx:id="heroArmorField" layoutX="64.0" layoutY="405.0" />
+                  <Label layoutX="16.0" layoutY="245.0" text="Weapon" />
+                  <TextField fx:id="monWeaponField" layoutX="65.0" layoutY="241.0" />
+                  <Button fx:id="delEntityBtn" layoutX="114.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#deleteEntity" text="Delete Entity" />
+                  <Button fx:id="addEntityBtn" layoutX="34.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#addEntity" text="Add Entity" />
+                  <TextField fx:id="entityRow" alignment="CENTER" layoutX="40.0" layoutY="448.0" prefHeight="18.0" prefWidth="66.0" text="Row" />
+                  <TextField fx:id="entityCol" alignment="CENTER" layoutX="114.0" layoutY="448.0" prefHeight="18.0" prefWidth="66.0" text="Column" />
+                  <Button layoutX="68.0" layoutY="517.0" mnemonicParsing="false" onMouseClicked="#viewDetails" prefHeight="26.0" prefWidth="84.0" text="View Details" />
+                    </children>
+                </AnchorPane>
+                <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+                    <content>
+                        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="546.0" prefWidth="415.0">
+                            <children>
+                                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <Label fx:id="worldDisplay" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="80.0" lineSpacing="5.0" prefHeight="388.0" prefWidth="331.0" textAlignment="JUSTIFY">
+                           <font>
+                              <Font name="Courier New" size="16.0" />
+                           </font></Label>
+                        <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="494.0" prefHeight="52.0" prefWidth="363.0" textAlignment="CENTER" textFill="#ff0707">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <AnchorPane prefHeight="551.0" prefWidth="382.0">
+                    <children>
+                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <TextArea fx:id="worldDetails" layoutX="11.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="11.0" fx:id="x3" />
+                    </font>
+                    <textFill>
+                        <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+                    </textFill>
+                </Label>
+                <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>
